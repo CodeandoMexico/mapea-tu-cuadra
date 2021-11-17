@@ -325,11 +325,11 @@ h6 {
 }
 
 a {
-	color: #277cea;
+	color: #FAD0D1;
 	text-decoration: none;
 	-webkit-transition: all .2s linear;
 	transition: all .2s linear;
-	border-bottom: 1px dashed #277cea
+	border-bottom: 1px dashed #FAD0D1
 }
 
 a:active,
@@ -339,8 +339,8 @@ a:focus {
 
 a:hover,
 a:focus {
-	color: #68a4f1;
-	border-bottom: 1px solid #68a4f1
+	color: #FAD0D1;
+	border-bottom: 1px solid #FAD0D1
 }
 
 hr {
@@ -428,7 +428,7 @@ pre>code {
 	bottom: -8px;
 	width: 50px;
 	height: 2px;
-	background-color: #277cea
+	background-color: #FAD0D1
 }
 
 .hidden {
@@ -686,21 +686,21 @@ pre>code {
 		width: 100%;
 		-webkit-transform: scaleX(0);
 		transform: scaleX(0);
-		background: #277cea;
+		background: #FAD0D1;
 		-webkit-transition: color 0.2s ease-in-out, -webkit-transform .2s ease-in-out;
 		transition: color 0.2s ease-in-out, -webkit-transform .2s ease-in-out;
 		transition: color 0.2s ease-in-out, transform .2s ease-in-out;
 		transition: color 0.2s ease-in-out, transform .2s ease-in-out, -webkit-transform .2s ease-in-out
 	}
 	.header__link:hover {
-		color: #0f4c9c
+		color: #FAD0D1
 	}
 	.header__link:hover::after,
 	.header__link :active::after,
 	.header__link :focus::after {
 		-webkit-transform: scaleX(1);
 		transform: scaleX(1);
-		color: #0f4c9c;
+		color: #FAD0D1;
 		-webkit-transition: -webkit-transform .2s ease-in-out;
 		transition: -webkit-transform .2s ease-in-out;
 		transition: transform .2s ease-in-out;
@@ -722,7 +722,7 @@ footer a {
 }
 
 footer a:hover {
-	color: #277cea;
+	color: #FAD0D1;
 	border-bottom: 0
 }
 
@@ -989,7 +989,7 @@ textarea:focus {
 	left: 0;
 	width: 0;
 	height: 2px;
-	background: #277cea;
+	background: #FAD0D1;
 	z-index: 5;
 	-webkit-transition: width 0.45s cubic-bezier(0.694, 0.048, 0.335, 1);
 	transition: width 0.45s cubic-bezier(0.694, 0.048, 0.335, 1);
@@ -1603,12 +1603,12 @@ table td {
 }
 
 .controls__item a:hover {
-	color: #277cea;
+	color: #FAD0D1;
 	border-bottom: 0
 }
 
 .controls__item a:hover svg {
-	fill: #277cea
+	fill: #FAD0D1
 }
 
 
