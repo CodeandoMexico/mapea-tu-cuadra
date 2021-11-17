@@ -22,7 +22,7 @@ navigation: # Navigation links
   - {name: 'Registro', link: '/registro'}
 
 tagline: >
-  Proyecto de evaluación de la movilidad peatonal y ciclista
+  Proyecto de evaluación de la micromovilidad
 
 hero_img: maps/map14.png # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
