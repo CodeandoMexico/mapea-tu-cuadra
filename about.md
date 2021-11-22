@@ -34,9 +34,10 @@ Toda la ciudadanía con mayoría de edad que esté interesada en mejorar la cali
 Podrás participar en una o varias actividades durante el mes de noviembre de 2021, como se especifica a continuación:
 
 1. **Encuesta en línea** (Viernes 19 al Martes 30 de noviembre). A través de un formulario en las redes sociales de URBE.
-2. **Sondeo** presencial (Viernes 19 de noviembre, 16:00 a 19:00 hrs). Inscríbete a ésta actividad para formar parte de las brigadas que realizarán encuestas breves a quienes residen en la colonia.
-3. **Mapeo** presencial (Sábado 20 de noviembre, 11:00 a 14:00 hrs). Inscríbete a ésta actividad para formar parte de las brigadas que recolectarán datos durante el mapeo de la colonia Andrade.
+2. **Sondeo** presencial (Miércoles 24 de noviembre, 18:00 a 20:00 hrs). Inscríbete a ésta actividad para formar parte de las brigadas que realizarán encuestas breves a quienes residen en la colonia.
+3. **Mapeo** presencial (Domingo 28 de noviembre, 12:00 a 14:00 hrs). Inscríbete a ésta actividad para formar parte de las brigadas que recolectarán datos durante el mapeo de la colonia Andrade.
 
+`*El punto de encuentro es Américas #104, Colonia Andrade, León, Guanajuato.`
 `*Para las actividades presenciales, contaremos con snacks y pizza para las personas participantes.`
 
 ### Requisitos generales
