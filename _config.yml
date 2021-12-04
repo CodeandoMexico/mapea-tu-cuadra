@@ -20,6 +20,7 @@ navigation: # Navigation links
   - {name: 'Inicio', link: '/'}
   - {name: 'Convocatoria', link: '/convocatoria'}
   - {name: 'Registro', link: '/registro'}
+  - {name: 'Resultados', link: '/resultados'}
 
 tagline: >
   Proyecto de evaluación de la micromovilidad
