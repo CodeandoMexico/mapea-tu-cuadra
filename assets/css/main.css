@@ -1361,4 +1361,29 @@ table {
       .controls__item a:hover svg {
         fill: #FAD0D1; }
 
+.container-halves {
+  display: flex; }
+
+.section__half {
+  width: 50%; }
+
+#map {
+  height: 80vh;
+  width: 80vw; }
+
+/*================ DESCRIPTION AND BTNS ================*/
+.description {
+  padding: 2rem; }
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.btn-map {
+  margin: 1rem;
+  width: 80%;
+  height: max-content; }
+
 /*# sourceMappingURL=main.css.map */

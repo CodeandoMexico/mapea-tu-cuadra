@@ -21,6 +21,12 @@
   </div>
 </footer>
 <script async src="{{ "/assets/js/bundle.js" | relative_url }}"></script>
+{% if page.name == 'resultados.html' %}
+<script async src="{{ "/assets/data/FrenteManzana_2020.js" | relative_url }}"></script>
+<script async src="{{ "/assets/data/Poligono_Andrade.js" | relative_url }}"></script>
+<script async src="{{ "/assets/data/intersecciones.js" | relative_url }}"></script>
+	<script async src="{{ "/assets/js/map.js" | relative_url }}"></script>
+{% endif %}
 {% if site.service_worker %}
 <script async>
   if ('serviceWorker' in navigator) {
