@@ -7,10 +7,11 @@ title: Resultados por zona
 	<div class="location-card">
 		<h3 class="location-card__title">{{ colonia.colonia }}</h3>
 		<div class="location-card__icons">
-			<a class="location-card__icon" href="{{ "/resultados/andrade/map" | relative_url }}">
+			{% assign href = "/resultados/" | append: colonia.name  | append: "/map"%}
+			<a class="location-card__icon" href="{{ href | relative_url }}">
 				{% include location.svg %}
 			</a>
-			<a class="location-card__icon" href="{{ "/resultados/andrade/map" | relative_url }}">
+			<a class="location-card__icon" href="{{ href | relative_url }}">
 				{% include chart.svg %}
 			</a>
 		</div>
