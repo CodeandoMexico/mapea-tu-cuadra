@@ -1,3 +1,50 @@
+/*================ RESULTS PAGE ================*/
+.location-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	padding: 0 1rem;
+
+	width: 10rem;
+	height: 7rem;
+
+	border: 1px solid gray;
+	border-radius: 1rem;
+
+	cursor: pointer;
+
+	&__title {
+		font-size: 2rem;
+	}
+
+	&__icons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		width: 100%;
+		
+		& svg {
+			width: 2rem;
+			transition: 300ms all ease-in-out;
+			fill: $text-color;
+
+			&:hover {
+				transform: translateY(-5px);
+				fill: $primary-light;
+			}
+		}
+	}
+	&__icon {
+		border: none;
+		&:hover {
+			border: none;
+		}
+	}
+}
+
+/*================ MAP PAGE ================*/
 .container-halves {
 	display: flex;
 }

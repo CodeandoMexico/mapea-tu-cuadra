@@ -1361,6 +1361,37 @@ table {
       .controls__item a:hover svg {
         fill: #FAD0D1; }
 
+/*================ RESULTS PAGE ================*/
+.location-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+  width: 10rem;
+  height: 7rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  cursor: pointer; }
+  .location-card__title {
+    font-size: 2rem; }
+  .location-card__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
+    .location-card__icons svg {
+      width: 2rem;
+      transition: 300ms all ease-in-out;
+      fill: #343851; }
+      .location-card__icons svg:hover {
+        transform: translateY(-5px);
+        fill: #FAD0D1; }
+  .location-card__icon {
+    border: none; }
+    .location-card__icon:hover {
+      border: none; }
+
+/*================ MAP PAGE ================*/
 .container-halves {
   display: flex; }
 

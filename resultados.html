@@ -1,21 +1,18 @@
 ---
-layout: results
-title: Algunos resultados
+layout: page
+title: Resultados por zona
 ---
 
-<section class="container-halves compete-width">
-	<div class="map section__half" id="map"></div>
-	
-	<section class="description section__half">
-		<h2 class="section-title">Título del mapa</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consequatur adipisci repellat dignissimos aliquid ullam nulla magnam voluptatem, quisquam quam dolor quod enim exercitationem nostrum consectetur dolorum hic doloremque ipsam?</p>
-
-		<div class="btn-container">
-		<button class="map-btn" id="0"><strong>Todos</strong> - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores inventore nobis nihil illo, sed veritatis eos unde itaque quam soluta vitae fugit doloremque nisi impedit ipsum, mollitia natus porro libero.</button>
-		<button class="map-btn" id="1"><strong>Polígono</strong> - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores inventore nobis nihil illo, sed veritatis eos unde itaque quam soluta vitae fugit doloremque nisi impedit ipsum, mollitia natus porro libero.</button>
-		<button class="map-btn" id="2"><strong>Manzanas</strong> - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit quasi mollitia adipisci explicabo a nemo amet est laudantium ipsam, tenetur iusto quas corrupti error autem similique expedita veritatis! Debitis, nam!</button>
-		<button class="map-btn" id="3"><strong>Intersecciones</strong> - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum, deserunt natus fuga deleniti saepe voluptatem dolor impedit nihil id voluptas ducimus obcaecati commodi asperiores dolorem ab aliquam perferendis unde.</button>
+{% for colonia in site.data.results %}
+	<div class="location-card">
+		<h3 class="location-card__title">{{ colonia.colonia }}</h3>
+		<div class="location-card__icons">
+			<a class="location-card__icon" href="{{ "/resultados/andrade/map" | relative_url }}">
+				{% include location.svg %}
+			</a>
+			<a class="location-card__icon" href="{{ "/resultados/andrade/map" | relative_url }}">
+				{% include chart.svg %}
+			</a>
 		</div>
-	</section>
-</section>
-
+	</div>
+{% endfor %}
