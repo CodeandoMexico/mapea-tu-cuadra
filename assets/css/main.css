@@ -1232,6 +1232,14 @@ table {
 .highlight {
   background-color: #f8f8f8; }
 
+::-webkit-scrollbar {
+  background-color: #ededed;
+  width: 10px; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #FAD0D1;
+  border-radius: 5px; }
+
 .hero {
   margin: 3.75rem auto 0;
   min-height: 16.25rem;
@@ -1396,15 +1404,17 @@ table {
   display: flex; }
 
 .section__half {
-  width: 50%; }
+  width: 50%;
+  height: 100vh; }
 
 #map {
-  height: 80vh;
+  height: 100vh;
   width: 80vw; }
 
 /*================ DESCRIPTION AND BTNS ================*/
 .description {
-  padding: 2rem; }
+  padding: 2rem;
+  overflow-y: scroll; }
 
 .btn-container {
   display: flex;
@@ -1416,5 +1426,26 @@ table {
   margin: 1rem;
   width: 80%;
   height: max-content; }
+
+.return-btn {
+  display: flex;
+  align-items: center;
+  width: max-content; }
+  .return-btn__icon {
+    width: 1rem;
+    margin: 0;
+    margin-right: 1rem;
+    fill: #343851;
+    transition: 200ms all ease-in; }
+  .return-btn:hover .return-btn__icon, .return-btn:hover .return-btn__text {
+    transform: translateY(-4px);
+    color: #FAD0D1;
+    fill: #FAD0D1; }
+  .return-btn__text {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: #343851;
+    transition: 200ms all ease-in; }
 
 /*# sourceMappingURL=main.css.map */
