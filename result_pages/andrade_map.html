@@ -18,21 +18,29 @@ title: Algunos resultados
 		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus qui dolor molestiae in fuga officia, eos sit asperiores iusto, dolores porro iure perspiciatis voluptates? Recusandae quas consequuntur ipsum assumenda voluptates!
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus similique perferendis, id perspiciatis veniam assumenda dolor officia cupiditate. Veritatis perferendis pariatur nostrum eaque dolorum necessitatibus quos praesentium modi nulla aliquam.
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. At alias nesciunt aut illum, amet debitis iste cumque temporibus sunt doloremque eligendi similique placeat laboriosam impedit labore vel, sint, dicta ut?
-
+		{% assign colors_text = "#F2789F,#064635,#000957,#FF7800" %}
+		{% assign colors = colors_text | split: "," %}
 		<div class="btn-container">
-		<button class="map-btn" id="0"><strong>Todos</strong> - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores inventore nobis nihil illo, sed veritatis eos unde itaque quam soluta vitae fugit doloremque nisi impedit ipsum, mollitia natus porro libero.</button>
-		<button class="map-btn" id="1"><strong>Polígono</strong> - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores inventore nobis nihil illo, sed veritatis eos unde itaque quam soluta vitae fugit doloremque nisi impedit ipsum, mollitia natus porro libero.</button>
-		<button class="map-btn" id="2"><strong>Manzanas</strong> - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit quasi mollitia adipisci explicabo a nemo amet est laudantium ipsam, tenetur iusto quas corrupti error autem similique expedita veritatis! Debitis, nam!</button>
-		<button class="map-btn" id="3"><strong>Intersecciones</strong> - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum, deserunt natus fuga deleniti saepe voluptatem dolor impedit nihil id voluptas ducimus obcaecati commodi asperiores dolorem ab aliquam perferendis unde.</button>
+			{% for result in site.data.results %}
+				{% if result.name == "andrade" %}
+					{% for section in result.sections %}
+						<button class="btn-map" id="{% increment index %}"
+							{% assign c_index = index | minus: 1 %}
+						style="background-color:{{ colors[c_index] }}">
+							<strong>{{ section[0] | split: '_' | join: ' ' | capitalize }}</strong>
+						</button>
+					{% endfor %}
+				{% endif %}
+			{% endfor %}
 		</div>
 	</section>
 
 	<div class="map section__half" id="map"></div>
 </section>
 
-
-<script defer src="{{ "/assets/data/andrade/FrenteManzana_2020.js" | relative_url }}"></script>
 <script defer src="{{ "/assets/data/andrade/Poligono_Andrade.js" | relative_url }}"></script>
-<script defer src="{{ "/assets/data/andrade/intersecciones.js" | relative_url }}"></script>
-<script defer src="{{ "/assets/js/map.js" | relative_url }}"></script>
+<script src="{{ '/assets/data/andrade/infraestructura_ciclista/cicloestacionamientos.js' | relative_url }}"></script>
+<script src="{{ '/assets/data/andrade/infraestructura_ciclista/calles_compartidas.js' | relative_url }}"></script>
+<script src="{{ '/assets/data/andrade/infraestructura_ciclista/velocidad_maxima.js' | relative_url }}"></script>
+<script defer src="{{ "/assets/js/andrade_map.js" | relative_url }}"></script>
 

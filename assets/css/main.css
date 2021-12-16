@@ -1424,8 +1424,15 @@ table {
 
 .btn-map {
   margin: 1rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: 1rem;
   width: 80%;
-  height: max-content; }
+  color: white;
+  cursor: pointer;
+  transition: 300ms transform ease-in; }
+  .btn-map:hover {
+    transform: scale(1.03); }
 
 .return-btn {
   display: flex;
@@ -1438,7 +1445,7 @@ table {
     fill: #343851;
     transition: 200ms all ease-in; }
   .return-btn:hover .return-btn__icon, .return-btn:hover .return-btn__text {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     color: #FAD0D1;
     fill: #FAD0D1; }
   .return-btn__text {

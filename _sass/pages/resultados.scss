@@ -75,9 +75,22 @@
 
 .btn-map {
 	margin: 1rem;
+	padding: 1rem;
+
+	border: 0;
+	border-radius: 1rem;
 
 	width: 80%;
-	height: max-content;
+
+	color: white;
+
+	cursor: pointer;
+
+	transition: 300ms transform ease-in;
+
+	&:hover {
+		transform: scale(1.03);
+	}
 }
 
 .return-btn {
@@ -96,7 +109,7 @@
 
 	&:hover &__icon,
 	&:hover &__text {
-		transform: translateY(-4px);
+		transform: translateY(-2px);
 		color: $primary-light;
 		fill: $primary-light;
 	}
