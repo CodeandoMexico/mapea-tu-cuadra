@@ -1,13 +1,61 @@
+/*================ RESULTS PAGE ================*/
+.location-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	padding: 0 1rem;
+
+	width: 10rem;
+	height: 7rem;
+
+	border: 1px solid gray;
+	border-radius: 1rem;
+
+	cursor: pointer;
+
+	&__title {
+		font-size: 2rem;
+	}
+
+	&__icons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		width: 100%;
+		
+		& svg {
+			width: 2rem;
+			transition: 300ms all ease-in-out;
+			fill: $text-color;
+
+			&:hover {
+				transform: translateY(-5px);
+				fill: $primary-light;
+			}
+		}
+	}
+	&__icon {
+		border: none;
+		&:hover {
+			border: none;
+		}
+	}
+}
+
+/*================ MAP PAGE ================*/
 .container-halves {
 	display: flex;
 }
 
 .section__half {
 	width: 50%;
+	height: 100vh;
 }
 
 #map {
-	height: 80vh; 
+	height: 100vh; 
 	width: 80vw;
 }
 
@@ -15,6 +63,7 @@
 
 .description {
 	padding: 2rem;
+	overflow-y: scroll;
 }
 
 .btn-container {
@@ -26,7 +75,49 @@
 
 .btn-map {
 	margin: 1rem;
+	padding: 1rem;
+
+	border: 0;
+	border-radius: 1rem;
 
 	width: 80%;
-	height: max-content;
+
+	color: white;
+
+	cursor: pointer;
+
+	transition: 300ms transform ease-in;
+
+	&:hover {
+		transform: scale(1.03);
+	}
+}
+
+.return-btn {
+	display: flex;
+	align-items: center;
+	width: max-content;
+
+	
+	&__icon {
+		width: 1rem;
+		margin: 0;
+		margin-right: 1rem;
+		fill: $text-color;
+		transition: 200ms all ease-in;
+	}
+
+	&:hover &__icon,
+	&:hover &__text {
+		transform: translateY(-2px);
+		color: $primary-light;
+		fill: $primary-light;
+	}
+	&__text {
+		font-size: 1rem;
+		margin: 0;
+		margin-bottom: 0.5rem;
+		color: $text-color;
+		transition: 200ms all ease-in;
+	}
 }

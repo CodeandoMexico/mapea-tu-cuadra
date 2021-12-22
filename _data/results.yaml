@@ -1,0 +1,15 @@
+- colonia: Andrade
+  name: andrade
+  sections:
+    infraestructura_ciclista:
+      - bici_estacionamientos
+      - calles_compartidas
+      - red_de_ciclovias
+    espacios_publicos_y_equipamiento:
+      - infraestructura_verde
+      - equipamiento_urbano
+    infraestructura_peatonal:
+      - semaforos
+      - cruces
+      - banquetas
+  
