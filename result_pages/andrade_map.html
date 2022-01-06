@@ -4,7 +4,7 @@ permalink: /resultados/andrade/map
 title: Algunos resultados
 ---
 
-<section class="container-halves compete-width">
+<section class="container-halves complete-width">
 	<section class="description section__half">
 		<a class="return-btn" href={{"/resultados" | relative_url }}>
 			<div class="return-btn__icon">
@@ -12,26 +12,30 @@ title: Algunos resultados
 			</div>
 			<p class="return-btn__text">Regresar</p>
 		</a>
-		<h2 class="section-title">Título del mapa</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consequatur adipisci repellat dignissimos aliquid ullam nulla magnam voluptatem, quisquam quam dolor quod enim exercitationem nostrum consectetur dolorum hic doloremque ipsam?</p>
+		<div class="hero--results">
+			<div class="hero__wrap">
+				<h2 class="hero__title">Resultados la Andrade</h2>
+			</div>
+		</div>
+		<div class="description__wrap">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consequatur adipisci repellat dignissimos aliquid ullam nulla magnam voluptatem, quisquam quam dolor quod enim exercitationem nostrum consectetur dolorum hic doloremque ipsam?</p>
 
-		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus qui dolor molestiae in fuga officia, eos sit asperiores iusto, dolores porro iure perspiciatis voluptates? Recusandae quas consequuntur ipsum assumenda voluptates!
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus similique perferendis, id perspiciatis veniam assumenda dolor officia cupiditate. Veritatis perferendis pariatur nostrum eaque dolorum necessitatibus quos praesentium modi nulla aliquam.
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. At alias nesciunt aut illum, amet debitis iste cumque temporibus sunt doloremque eligendi similique placeat laboriosam impedit labore vel, sint, dicta ut?
-		{% assign colors_text = "#F2789F,#064635,#000957,#FF7800" %}
-		{% assign colors = colors_text | split: "," %}
-		<div class="btn-container">
-			{% for result in site.data.results %}
-				{% if result.name == "andrade" %}
-					{% for section in result.sections %}
-						<button class="btn-map" id="{% increment index %}"
-							{% assign c_index = index | minus: 1 %}
-						style="background-color:{{ colors[c_index] }}">
-							<strong>{{ section[0] | split: '_' | join: ' ' | capitalize }}</strong>
-						</button>
-					{% endfor %}
-				{% endif %}
-			{% endfor %}
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. At alias nesciunt aut illum, amet debitis iste cumque temporibus sunt doloremque eligendi similique placeat laboriosam impedit labore vel, sint, dicta ut?
+			{% assign colors_text = "#F2789F,#064635,#000957,#FF7800" %}
+			{% assign colors = colors_text | split: "," %}
+			<div class="btn-container">
+				{% for result in site.data.results %}
+					{% if result.name == "andrade" %}
+						{% for section in result.sections %}
+							<button class="btn-map" id="{% increment index %}"
+								{% assign c_index = index | minus: 1 %}
+							style="background-color:{{ colors[c_index] }}">
+								<strong>{{ section[0] | split: '_' | join: ' ' | capitalize }}</strong>
+							</button>
+						{% endfor %}
+					{% endif %}
+				{% endfor %}
+			</div>
 		</div>
 	</section>
 

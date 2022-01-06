@@ -20,6 +20,64 @@ function drawMap(map) {
 			accessToken: 'pk.eyJ1IjoiZGF2aWRidWJ1Y29kZWFuZG8iLCJhIjoiY2t3c2NwbHlhMTU5OTMwbzJhZ2tzZWMzMiJ9.EOyBAqg-1xevyla4wgDGVg'
 	}).addTo(map)
 }
+
+function createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionNames) {
+	let markers = [],
+			buffers = [],
+			layers = []
+	
+	/*================ CREATE MARKERS AND BUFFERS ================*/
+	for (let i = 0; i < fileNames.length; i++) {
+		markers.push(
+			L.geoJSON(fileNames[i], {
+				pointToLayer: function (feature, latlng) {
+					return L.circleMarker(latlng, markerStyles[i])
+				}
+			})
+		)
+		if (bufferStyles[i] !== undefined) {
+			buffers.push(
+				L.geoJSON(fileNames[i], {
+					pointToLayer: function (feature, latlng) {
+						return L.circleMarker(latlng, bufferStyles[i])
+					}
+				})
+			)
+		}
+	}
+
+	/*================ CREATE AND ADD LAYERS ================*/
+	for (let i = 0; i < fileNames.length; i++) {
+		if (buffers[i] !== undefined) {
+			layers.push(
+				L.layerGroup([
+					markers[i],
+					buffers[i] 
+				])
+			)
+		} else {
+			layers.push(
+				L.layerGroup([
+					markers[i]
+				])
+			)
+		}
+	
+		layers[i].addTo(map)
+	}
+
+	/*================ OVERLAY ================*/
+	let overlay = {}
+
+	for (let i = 0; i < fileNames.length; i++) {
+		overlay[mapSectionNames[i]] = layers[i]
+	}
+
+	/*================ ADD EVERYTHING ================*/
+	layerControl = L.control.layers(null, overlay).addTo(map)
+
+}
+
 /*================ SWITCH MAP STATE ================*/
 function switchMap(map, state) {
 	/*================ RESETING THE MAP ================*/
@@ -32,173 +90,79 @@ function switchMap(map, state) {
 		style: poligonoAndradeStyle
 	}).addTo(map);
 
+	/*================ VARIABLE CREATION ================*/
+	let fileNames, markerStyles, bufferStyles, mapSectionNames;
+
 	/*================ CHOSE THE MAP ================*/
 	switch (state) {
+		/*================ BUTTON 1 ================*/
 		case "0":
-		/*================ CICLOESTACIONAMIENTOS ================*/
-		let cicloMarker = L.geoJSON(cicloestacionamientos, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, cicloestacionamientos_marker_style);
-				}
-		})
-		let cicloBuffer = L.geoJSON(cicloestacionamientos, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, cicloestacionamientos_buffer_style);
-				}
-		})
-		/*================ CALLES COMPARTIDAS ================*/
-		let callesCMarker = L.geoJSON(calles_compartidas, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, calles_compartidas_marker_style);
-				}
-		})
-		let callesCBuffer = L.geoJSON(calles_compartidas, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, calles_compartidas_buffer_style);
-				}
-		})
+		fileNames = [
+			cicloestacionamientos,
+			calles_compartidas,
+			velocidad_maxima
+		]
+		markerStyles = [
+			cicloestacionamientos_marker_style,
+			calles_compartidas_marker_style,
+			velocidad_maxima_marker_style
+		]
+		bufferStyles = [
+			cicloestacionamientos_buffer_style,
+			calles_compartidas_buffer_style,
+			velocidad_maxima_buffer_style
+		]
+		mapSectionNames = [
+			"Ciclo estacionamientos",
+			"Calles compartidas",
+			"Señal de velocidad máxima"
+		]
 			
-		/*================ VELOCIDAD MAXIMA ================*/
-		let velocidadMMarker = L.geoJSON(velocidad_maxima, {
-			pointToLayer: function (feature, latlng) {
-					return L.circleMarker(latlng, velocidad_maxima_marker_style);
-				}
-		})
-		let velocidadMBuffer = L.geoJSON(velocidad_maxima, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, velocidad_maxima_buffer_style);
-				}
-		})
-			
-		/*================ ADD THEM TO A LAYER ================*/
-			let cicloLayer = L.layerGroup([
-					cicloMarker,
-					cicloBuffer
-			]),
-				callesLayer = L.layerGroup([
-					callesCMarker,
-					callesCBuffer
-				]),
-				velocidadLayer = L.layerGroup([
-				velocidadMMarker,
-				velocidadMBuffer
-			])
-
-			cicloLayer.addTo(map)
-			callesLayer.addTo(map)
-			velocidadLayer.addTo(map)
-
-			let overlayCiclista = {
-				"Ciclo estacionamientos": cicloLayer,
-				"Calles compartidas": callesLayer,
-				"Señal de velocidad máxima": velocidadLayer
-			}
-			layerControl = L.control.layers(null, overlayCiclista).addTo(map)
+		createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionNames)
 			break
-		
+		/*================ BUTTON 2 ================*/
 		case "1":
-			/*================ VERDE ================*/
-			let infraVerdeMarker = L.geoJSON(infraestructura_verde, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, infraestructura_verde_marker_style);
-				}
-			})
-			let infraVerdeBuffer = L.geoJSON(infraestructura_verde, {
-					pointToLayer: function (feature, latlng) {
-							return L.circleMarker(latlng, infraestructura_verde_buffer_style);
-					}
-			})
-			/*================ EQUIPAMIENTO ================*/
-			let equipamientoMarker = L.geoJSON(equipamiento, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, equipamiento_marker_style);
-				}
-			})
-			let equipamientoBuffer = L.geoJSON(equipamiento, {
-					pointToLayer: function (feature, latlng) {
-							return L.circleMarker(latlng, equipamiento_buffer_style);
-					}
-			})
-			/*================ ADD THEM TO A LAYER ================*/
-			let equipamientoLayer = L.layerGroup([
-				equipamientoMarker,
-				equipamientoBuffer
-			]),
-				infraVerdeLayer = L.layerGroup([
-					infraVerdeMarker,
-					infraVerdeBuffer
-			])
-
-			infraVerdeLayer.addTo(map)
-			equipamientoLayer.addTo(map)
-
-			let overlaEquip = {
-				"Infraestructura Verde": infraVerdeLayer,
-				"Equipamiento Urbano": equipamientoLayer,
-			}
-			layerControl = L.control.layers(null, overlaEquip).addTo(map);
+			fileNames = [
+				infraestructura_verde,
+				equipamiento,
+			]
+			markerStyles = [
+				infraestructura_verde_marker_style,
+				equipamiento_marker_style,
+			]
+			bufferStyles = [
+				infraestructura_verde_buffer_style,
+				equipamiento_buffer_style,
+			]
+			mapSectionNames = [
+				"Infraestructura Verde",
+				"Equipamiento Urbano"
+			]
+			createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionNames)
 			break
+		/*================ BUTTON 3 ================*/
 		case "2":
-			/*================ BANQUETAS ================*/
-			let banquetasMarker = L.geoJSON(banquetas, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, banquetas_marker_style);
-				}
-			})
-			let banquetasBuffer = L.geoJSON(banquetas, {
-					pointToLayer: function (feature, latlng) {
-							return L.circleMarker(latlng, banquetas_buffer_style);
-					}
-			})
-			/*================ OBSTRUCCIONES ================*/
-			let obstruccionesMarker = L.geoJSON(obstrucciones, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, obstrucciones_marker_style);
-				}
-			})
-			let obstruccionesBuffer = L.geoJSON(obstrucciones, {
-					pointToLayer: function (feature, latlng) {
-							return L.circleMarker(latlng, obstrucciones_buffer_style);
-					}
-			})
-			/*================ SEÑALAMIENTOS ================*/
-			let señalamientosMarker = L.geoJSON(señalamientos, {
-				pointToLayer: function (feature, latlng) {
-						return L.circleMarker(latlng, señalamientos_marker_style);
-				}
-			})
-			let señalamientosBuffer = L.geoJSON(señalamientos, {
-					pointToLayer: function (feature, latlng) {
-							return L.circleMarker(latlng, señalamientos_buffer_style);
-					}
-			})
-			/*================ ADD THEM TO A LAYER ================*/
-			let banquetasLayer = L.layerGroup([
-				banquetasMarker,
-				banquetasBuffer
-			])
-			let obstruccionesLayer = L.layerGroup([
-				obstruccionesMarker,
-				obstruccionesBuffer
-			])
-			let señalamientosLayer = L.layerGroup([
-				señalamientosMarker,
-				señalamientosBuffer
-			])
-
-			banquetasLayer.addTo(map)
-			obstruccionesLayer.addTo(map)
-			señalamientosLayer.addTo(map)
-
-			let overlayInfraPeaton = {
-				"Banquetas": banquetasLayer,
-				"Obstruccines": obstruccionesLayer,
-				"Señalamientos": señalamientosLayer
-			}
-			layerControl = L.control.layers(null, overlayInfraPeaton).addTo(map);
-			break
-		case "3":
-			L.geoJSON(poligonoAndrade).addTo(map);
+			fileNames = [
+				banquetas,
+				obstrucciones,
+				señalamientos
+			]
+			markerStyles = [
+				banquetas_marker_style,
+				obstrucciones_marker_style,
+				señalamientos_marker_style
+			]
+			bufferStyles = [
+				banquetas_buffer_style,
+				obstrucciones_buffer_style,
+				señalamientos_buffer_style
+			]
+			mapSectionNames = [
+				"Banquetas",
+				"Obstruccines",
+				"Señalamientos"
+			]
+			createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionNames)
 			break
 		default:
 			break
