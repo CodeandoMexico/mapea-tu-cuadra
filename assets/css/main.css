@@ -395,7 +395,8 @@ template {
   display: none; }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 body {
   -webkit-overflow-scrolling: touch; }
@@ -1232,6 +1233,38 @@ table {
 .highlight {
   background-color: #f8f8f8; }
 
+/*================ SCROLLBAR ================*/
+::-webkit-scrollbar {
+  background-color: #ededed;
+  width: 10px; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #FAD0D1;
+  border-radius: 5px; }
+
+/*================ SCROLL BUTTON ================*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -5rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: #FAD0D1;
+  fill: white;
+  border-radius: 1rem;
+  z-index: 1000;
+  transition: all 400ms ease-in-out; }
+
+.scrollup.show-scroll {
+  bottom: 1rem; }
+
+/*================ SMALLER DEVICES ================*/
+@media only screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none; }
+
+  ::-webkit-scrollbar-thumb {
+    display: none; } }
 .hero {
   margin: 3.75rem auto 0;
   min-height: 16.25rem;
@@ -1361,19 +1394,54 @@ table {
       .controls__item a:hover svg {
         fill: #FAD0D1; }
 
+/*================ RESULTS PAGE ================*/
+.location-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+  width: 10rem;
+  height: 7rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  cursor: pointer; }
+  .location-card__title {
+    font-size: 2rem; }
+  .location-card__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
+    .location-card__icons svg {
+      width: 2rem;
+      transition: 300ms all ease-in-out;
+      fill: #343851; }
+      .location-card__icons svg:hover {
+        transform: translateY(-5px);
+        fill: #FAD0D1; }
+  .location-card__icon {
+    border: none; }
+    .location-card__icon:hover {
+      border: none; }
+
+/*================ MAP PAGE ================*/
 .container-halves {
   display: flex; }
 
 .section__half {
-  width: 50%; }
+  width: 50%;
+  height: 100vh; }
 
 #map {
-  height: 80vh;
+  height: 100vh;
   width: 80vw; }
 
 /*================ DESCRIPTION AND BTNS ================*/
 .description {
-  padding: 2rem; }
+  overflow-y: scroll; }
+  .description__wrap {
+    margin-top: 1rem;
+    padding: 0 2rem; }
 
 .btn-container {
   display: flex;
@@ -1383,7 +1451,77 @@ table {
 
 .btn-map {
   margin: 1rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: 1rem;
   width: 80%;
-  height: max-content; }
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms ease-in; }
+  .btn-map:hover {
+    transform: scale(1.03);
+    color: white; }
+
+.return-btn {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  padding: 0.5rem 2rem 0 2rem; }
+  .return-btn__icon {
+    width: 1rem;
+    margin: 0;
+    margin-right: 1rem;
+    fill: #343851;
+    transition: 200ms all ease-in; }
+  .return-btn:hover .return-btn__icon, .return-btn:hover .return-btn__text {
+    transform: translateY(-2px);
+    color: #FAD0D1;
+    fill: #FAD0D1; }
+  .return-btn__text {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: #343851;
+    transition: 200ms all ease-in; }
+
+.hero--results {
+  margin: 0;
+  min-height: 8.75rem;
+  width: 100%;
+  position: relative;
+  background-color: #313237;
+  padding: 1rem; }
+  @media only screen and (min-width: 62em) {
+    .hero--results {
+      height: 12.5em; } }
+  .hero--results::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 56, 81, 0.8); }
+
+/*================ DESCRIPTION AND BTNS ================*/
+@media only screen and (max-width: 768px) {
+  .container-halves {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+  .section__half {
+    width: 100%;
+    height: 100vh; }
+
+  .description {
+    margin-bottom: 2rem;
+    height: max-content; }
+
+  #map {
+    height: 100vh;
+    width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */
