@@ -32,6 +32,11 @@ function createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionName
 			L.geoJSON(fileNames[i], {
 				pointToLayer: function (feature, latlng) {
 					return L.circleMarker(latlng, markerStyles[i])
+				},
+				onEachFeature: function (feature, layer) {
+					if (feature.properties) {
+						layer.bindPopup(feature.properties);
+				}
 				}
 			})
 		)
@@ -73,6 +78,8 @@ function createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionName
 		overlay[mapSectionNames[i]] = layers[i]
 	}
 
+	overlay["Polígono"] = poliLayer
+
 	/*================ ADD EVERYTHING ================*/
 	layerControl = L.control.layers(null, overlay).addTo(map)
 
@@ -86,9 +93,11 @@ function switchMap(map, state) {
 	})
 	drawMap(map)
 	layerControl.remove(map)
-	L.geoJSON(poligonoAndrade, {
+	/*================ ADD THE POLIGON ================*/
+	poli = L.geoJSON(poligonoAndrade, {
 		style: poligonoAndradeStyle
-	}).addTo(map);
+	})
+	poliLayer = L.layerGroup([poli]).addTo(map)
 
 	/*================ VARIABLE CREATION ================*/
 	let fileNames, markerStyles, bufferStyles, mapSectionNames;
@@ -177,11 +186,13 @@ let map = createMap(
 		zoom = 16,
 )
 drawMap(map)
-L.geoJSON(poligonoAndrade, {
+/*================ ADD THE POLIGON ================*/
+let poli = L.geoJSON(poligonoAndrade, {
 	style: poligonoAndradeStyle
-}).addTo(map);
+})
+let poliLayer = L.layerGroup([poli]).addTo(map)
 
-let layerControl = L.control.layers(null, null).addTo(map)
+let layerControl = L.control.layers(null, {"Polígono": poliLayer}).addTo(map)
 
 Array.from(btns).forEach(btn => {
 	btn.addEventListener('click', function () {
