@@ -27,11 +27,11 @@ title: Algunos resultados
 				{% for result in site.data.results %}
 					{% if result.name == "andrade" %}
 						{% for section in result.sections %}
-							<button class="btn-map" id="{% increment index %}"
+							<a href="#map" class="btn-map" id="{% increment index %}"
 								{% assign c_index = index | minus: 1 %}
 							style="background-color:{{ colors[c_index] }}">
 								<strong>{{ section[0] | split: '_' | join: ' ' | capitalize }}</strong>
-							</button>
+							</a>
 						{% endfor %}
 					{% endif %}
 				{% endfor %}
@@ -40,10 +40,14 @@ title: Algunos resultados
 	</section>
 
 	<div class="map section__half" id="map"></div>
+
+	<a href="#" class="scrollup" id="scroll-up">
+    {% include arrow-circle-up.svg %}
+  </a>
 </section>
 
 <!-- =================== POLIGONO ======================= -->
-<script defer src="{{ "/assets/data/andrade/Poligono_Andrade.js" | relative_url }}"></script>
+<script defer src="{{ '/assets/data/andrade/Poligono_Andrade.js' | relative_url }}"></script>
 
 <!-- =================== CICLISTA ======================= -->
 <script src="{{ '/assets/data/andrade/infraestructura_ciclista/cicloestacionamientos.js' | relative_url }}"></script>
@@ -58,5 +62,5 @@ title: Algunos resultados
 <script src="{{ '/assets/data/andrade/infraestructura_peatonal/obstrucciones.js' | relative_url }}"></script>
 <script src="{{ '/assets/data/andrade/infraestructura_peatonal/señalamientos.js' | relative_url }}"></script>
 
-<script defer src="{{ "/assets/js/andrade_map.js" | relative_url }}"></script>
+<script defer src="{{ '/assets/js/andrade_map.js' | relative_url }}"></script>
 

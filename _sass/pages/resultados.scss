@@ -87,13 +87,15 @@
 	width: 80%;
 
 	color: white;
+	text-decoration: none;
 
 	cursor: pointer;
 
-	transition: 300ms transform ease-in;
+	transition: all 200ms ease-in;
 
 	&:hover {
 		transform: scale(1.03);
+		color: white;
 	}
 }
 
@@ -101,7 +103,7 @@
 	display: flex;
 	align-items: center;
 	width: max-content;
-	padding: 1rem 2rem 0 2rem;
+	padding: 0.5rem 2rem 0 2rem;
 	
 	&__icon {
 		width: 1rem;
@@ -153,6 +155,27 @@
 
 
 /*================ DESCRIPTION AND BTNS ================*/
-@media only screen and (max-width: 768) {
+@media only screen and (max-width: 768px) {
+	.container-halves {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 	
+	.section__half {
+		width: 100%;
+		height: 100vh;
+	}
+
+	.description {
+		margin-bottom: 2rem;
+		height: max-content;
+	}
+	
+	#map {
+		height: 100vh; 
+		width: 100%;
+	}
+
+
 }
