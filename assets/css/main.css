@@ -395,7 +395,8 @@ template {
   display: none; }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 body {
   -webkit-overflow-scrolling: touch; }
@@ -1232,6 +1233,7 @@ table {
 .highlight {
   background-color: #f8f8f8; }
 
+/*================ SCROLLBAR ================*/
 ::-webkit-scrollbar {
   background-color: #ededed;
   width: 10px; }
@@ -1240,6 +1242,29 @@ table {
   background-color: #FAD0D1;
   border-radius: 5px; }
 
+/*================ SCROLL BUTTON ================*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -5rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: #FAD0D1;
+  fill: white;
+  border-radius: 1rem;
+  z-index: 1000;
+  transition: all 400ms ease-in-out; }
+
+.scrollup.show-scroll {
+  bottom: 1rem; }
+
+/*================ SMALLER DEVICES ================*/
+@media only screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none; }
+
+  ::-webkit-scrollbar-thumb {
+    display: none; } }
 .hero {
   margin: 3.75rem auto 0;
   min-height: 16.25rem;
@@ -1413,8 +1438,10 @@ table {
 
 /*================ DESCRIPTION AND BTNS ================*/
 .description {
-  padding: 2rem;
   overflow-y: scroll; }
+  .description__wrap {
+    margin-top: 1rem;
+    padding: 0 2rem; }
 
 .btn-container {
   display: flex;
@@ -1429,15 +1456,18 @@ table {
   border-radius: 1rem;
   width: 80%;
   color: white;
+  text-decoration: none;
   cursor: pointer;
-  transition: 300ms transform ease-in; }
+  transition: all 200ms ease-in; }
   .btn-map:hover {
-    transform: scale(1.03); }
+    transform: scale(1.03);
+    color: white; }
 
 .return-btn {
   display: flex;
   align-items: center;
-  width: max-content; }
+  width: max-content;
+  padding: 0.5rem 2rem 0 2rem; }
   .return-btn__icon {
     width: 1rem;
     margin: 0;
@@ -1454,5 +1484,44 @@ table {
     margin-bottom: 0.5rem;
     color: #343851;
     transition: 200ms all ease-in; }
+
+.hero--results {
+  margin: 0;
+  min-height: 8.75rem;
+  width: 100%;
+  position: relative;
+  background-color: #313237;
+  padding: 1rem; }
+  @media only screen and (min-width: 62em) {
+    .hero--results {
+      height: 12.5em; } }
+  .hero--results::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 56, 81, 0.8); }
+
+/*================ DESCRIPTION AND BTNS ================*/
+@media only screen and (max-width: 768px) {
+  .container-halves {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+  .section__half {
+    width: 100%;
+    height: 100vh; }
+
+  .description {
+    margin-bottom: 2rem;
+    height: max-content; }
+
+  #map {
+    height: 100vh;
+    width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */
