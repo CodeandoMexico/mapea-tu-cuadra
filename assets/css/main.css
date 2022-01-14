@@ -1403,17 +1403,16 @@ table {
   width: 10rem;
   height: 7rem;
   border: 1px solid gray;
-  border-radius: 1rem;
-  cursor: pointer; }
+  border-radius: 1rem; }
   .location-card__title {
     font-size: 2rem; }
   .location-card__icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%; }
     .location-card__icons svg {
-      width: 2rem;
+      width: 3rem;
       transition: 300ms all ease-in-out;
       fill: #343851; }
       .location-card__icons svg:hover {
