@@ -26,10 +26,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.671342,21.116082,1790.4000244140625 ]
     },
     "properties": {
-    "FIELD1":0,
+    "Unnamed: 0":0,
     "start":"2021-11-19T18:31:03.888-06:00",
     "end":"2021-11-19T18:31:29.885-06:00",
-    "Tipo de equipamiento":"Triángulo de prioridad ciclista",
+    "description":"Triángulo de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":null,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":null,
     "Tipo de equipamiento/Señalética de prioridad ciclista":null,
@@ -56,10 +56,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.670737,21.117932,1798.5714826583862 ]
     },
     "properties": {
-    "FIELD1":1,
+    "Unnamed: 0":1,
     "start":"2021-11-28T13:37:58.970-06:00",
     "end":"2021-11-28T13:38:51.725-06:00",
-    "Tipo de equipamiento":"Señalética de prioridad ciclista",
+    "description":"Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -86,10 +86,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.670417,21.117966,1622.0188329696657 ]
     },
     "properties": {
-    "FIELD1":2,
+    "Unnamed: 0":2,
     "start":"2021-11-28T13:38:51.805-06:00",
     "end":"2021-11-28T13:40:15.693-06:00",
-    "Tipo de equipamiento":"Señalética de prioridad ciclista",
+    "description":"Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -116,10 +116,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.671728,21.115472,1797.4210748672483 ]
     },
     "properties": {
-    "FIELD1":3,
+    "Unnamed: 0":3,
     "start":"2021-11-28T13:57:05.584-06:00",
     "end":"2021-11-28T13:57:35.136-06:00",
-    "Tipo de equipamiento":"Señalética de prioridad ciclista",
+    "description":"Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -146,10 +146,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.673137,21.114416,1798.380000114441 ]
     },
     "properties": {
-    "FIELD1":4,
+    "Unnamed: 0":4,
     "start":"2021-11-20T12:12:10.110-06:00",
     "end":"2021-11-28T14:17:05.276-06:00",
-    "Tipo de equipamiento":"Señalética de prioridad ciclista",
+    "description":"Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":null,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":null,
     "Tipo de equipamiento/Señalética de prioridad ciclista":null,
@@ -176,10 +176,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.671206,21.117992,1619.722936630249 ]
     },
     "properties": {
-    "FIELD1":5,
+    "Unnamed: 0":5,
     "start":"2021-11-28T14:53:05.100-06:00",
     "end":"2021-11-28T14:53:29.002-06:00",
-    "Tipo de equipamiento":"Amortiguador",
+    "description":"Amortiguador",
     "Tipo de equipamiento/Amortiguador":1,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":0,
@@ -206,10 +206,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.671158,21.117971,1788.24600315094 ]
     },
     "properties": {
-    "FIELD1":6,
+    "Unnamed: 0":6,
     "start":"2021-11-28T14:53:29.209-06:00",
     "end":"2021-11-28T14:54:59.673-06:00",
-    "Tipo de equipamiento":"Señalética de prioridad ciclista",
+    "description":"Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -236,10 +236,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.6706315,21.1179435,1792.2906189078471 ]
     },
     "properties": {
-    "FIELD1":7,
+    "Unnamed: 0":7,
     "start":"2021-11-28T13:50:51.794-06:00",
     "end":"2021-11-28T13:52:29.933-06:00",
-    "Tipo de equipamiento":"Triángulo de prioridad ciclista",
+    "description":"Triángulo de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":1,
     "Tipo de equipamiento/Señalética de prioridad ciclista":0,
@@ -266,10 +266,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.668992,21.11789,1798.9925622940063 ]
     },
     "properties": {
-    "FIELD1":8,
+    "Unnamed: 0":8,
     "start":"2021-11-28T14:54:59.790-06:00",
     "end":"2021-12-01T17:23:17.450-06:00",
-    "Tipo de equipamiento":"Triángulo de prioridad ciclista Señalética de prioridad ciclista",
+    "description":"Triángulo de prioridad ciclista Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":1,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -296,10 +296,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.667627,21.117493,1799.606336593628 ]
     },
     "properties": {
-    "FIELD1":9,
+    "Unnamed: 0":9,
     "start":"2021-12-01T17:23:17.587-06:00",
     "end":"2021-12-01T17:27:47.000-06:00",
-    "Tipo de equipamiento":"Amortiguador",
+    "description":"Amortiguador",
     "Tipo de equipamiento/Amortiguador":1,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":0,
@@ -326,10 +326,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.667775,21.117327,1798.5277938842771 ]
     },
     "properties": {
-    "FIELD1":10,
+    "Unnamed: 0":10,
     "start":"2021-12-01T17:27:47.136-06:00",
     "end":"2021-12-01T17:29:55.761-06:00",
-    "Tipo de equipamiento":"Señalética de prioridad ciclista",
+    "description":"Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -356,10 +356,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.667927,21.117046,1797.2704830169678 ]
     },
     "properties": {
-    "FIELD1":11,
+    "Unnamed: 0":11,
     "start":"2021-12-01T17:29:55.881-06:00",
     "end":"2021-12-01T17:31:23.678-06:00",
-    "Tipo de equipamiento":"Señalética de prioridad ciclista",
+    "description":"Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -386,10 +386,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.668169,21.116724,1799.4847830773165 ]
     },
     "properties": {
-    "FIELD1":12,
+    "Unnamed: 0":12,
     "start":"2021-12-01T17:31:23.795-06:00",
     "end":"2021-12-01T17:34:26.617-06:00",
-    "Tipo de equipamiento":"Amortiguador Señalética de prioridad ciclista",
+    "description":"Amortiguador Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":1,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -416,10 +416,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.669725,21.112018,1798.060139656067 ]
     },
     "properties": {
-    "FIELD1":13,
+    "Unnamed: 0":13,
     "start":"2021-12-01T17:35:33.048-06:00",
     "end":"2021-12-01T17:58:38.419-06:00",
-    "Tipo de equipamiento":"Señalética de prioridad ciclista",
+    "description":"Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -446,10 +446,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.66976,21.11205,1796.1133041381836 ]
     },
     "properties": {
-    "FIELD1":14,
+    "Unnamed: 0":14,
     "start":"2021-12-01T17:58:38.548-06:00",
     "end":"2021-12-01T17:59:20.970-06:00",
-    "Tipo de equipamiento":"Amortiguador Triángulo de prioridad ciclista Señalética de prioridad ciclista",
+    "description":"Amortiguador Triángulo de prioridad ciclista Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":1,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":1,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
@@ -476,10 +476,10 @@ const calles_compartidas = {
        "coordinates":  [ -101.669823,21.112046,1798.4420166015625 ]
     },
     "properties": {
-    "FIELD1":15,
+    "Unnamed: 0":15,
     "start":"2021-12-01T17:59:21.078-06:00",
     "end":"2021-12-01T18:00:51.459-06:00",
-    "Tipo de equipamiento":"Señalética de prioridad ciclista",
+    "description":"Señalética de prioridad ciclista",
     "Tipo de equipamiento/Amortiguador":0,
     "Tipo de equipamiento/Triángulo de prioridad ciclista":0,
     "Tipo de equipamiento/Señalética de prioridad ciclista":1,
