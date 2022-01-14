@@ -21,7 +21,7 @@ function drawMap(map) {
 	}).addTo(map)
 }
 
-function createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionNames) {
+function createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionNames, elNames) {
 	let markers = [],
 			buffers = [],
 			layers = []
@@ -32,11 +32,6 @@ function createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionName
 			L.geoJSON(fileNames[i], {
 				pointToLayer: function (feature, latlng) {
 					return L.circleMarker(latlng, markerStyles[i])
-				},
-				onEachFeature: function (feature, layer) {
-					if (feature.properties) {
-						layer.bindPopup(feature.properties);
-				}
 				}
 			})
 		)
@@ -45,6 +40,13 @@ function createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionName
 				L.geoJSON(fileNames[i], {
 					pointToLayer: function (feature, latlng) {
 						return L.circleMarker(latlng, bufferStyles[i])
+					},
+					onEachFeature: function (feature, layer) {
+						text = `<b>${elNames[i]}</b>`
+						if (feature.properties.description) {
+							text += `<br>${feature.properties.description}`
+						}
+						layer.bindPopup(text)
 					}
 				})
 			)
@@ -57,7 +59,7 @@ function createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionName
 			layers.push(
 				L.layerGroup([
 					markers[i],
-					buffers[i] 
+					buffers[i]
 				])
 			)
 		} else {
@@ -95,39 +97,60 @@ function switchMap(map, state) {
 	layerControl.remove(map)
 	/*================ ADD THE POLIGON ================*/
 	poli = L.geoJSON(poligonoAndrade, {
-		style: poligonoAndradeStyle
+		style: poligonoAndradeStyle,
+	}).bindPopup(layer => {
+		return "<b>Polígono de la Andrade</b>"
 	})
 	poliLayer = L.layerGroup([poli]).addTo(map)
 
 	/*================ VARIABLE CREATION ================*/
-	let fileNames, markerStyles, bufferStyles, mapSectionNames;
+	let fileNames, markerStyles, bufferStyles, mapSectionNames, elementNames
 
 	/*================ CHOSE THE MAP ================*/
 	switch (state) {
 		/*================ BUTTON 1 ================*/
+		// Aquí deberías de hacer un caso por cada botón en la sección del mapa
 		case "0":
-		fileNames = [
-			cicloestacionamientos,
-			calles_compartidas,
-			velocidad_maxima
-		]
-		markerStyles = [
-			cicloestacionamientos_marker_style,
-			calles_compartidas_marker_style,
-			velocidad_maxima_marker_style
-		]
-		bufferStyles = [
-			cicloestacionamientos_buffer_style,
-			calles_compartidas_buffer_style,
-			velocidad_maxima_buffer_style
-		]
-		mapSectionNames = [
-			"Ciclo estacionamientos",
-			"Calles compartidas",
-			"Señal de velocidad máxima"
-		]
+				// Nombre de las variables donde están guardados tu geojson
+				fileNames = [
+					cicloestacionamientos,
+					calles_compartidas,
+					velocidad_maxima
+				]
+				// Nombre de las variables donde están guardados los estilos de los marcadores
+				markerStyles = [
+					cicloestacionamientos_marker_style,
+					calles_compartidas_marker_style,
+					velocidad_maxima_marker_style
+				]
+				// Nombre de las variables donde están guardados los estilos de los buffers
+				// (Los circulos que están al rededor de los marcadores que suelen ser más tenues) 
+				bufferStyles = [
+					cicloestacionamientos_buffer_style,
+					calles_compartidas_buffer_style,
+					velocidad_maxima_buffer_style
+				]
+			  // Nombre que aparecerá en el menú del mapa (arriba a la derecha) 
+				mapSectionNames = [
+					"Ciclo estacionamientos",
+					"Calles compartidas",
+					"Señales de velocidad máxima"
+				]
+				// Nombre individual de cada elemento o punto en el mapa (para los binPopups)
+				elementNames = [
+					"Ciclo estacionamiento",
+					"Calle compartida",
+					"Señal de velocidad máxima"
+				]
+				
+			createLayers(map,
+				fileNames,
+				markerStyles,
+				bufferStyles,
+				mapSectionNames,
+				elementNames
+			)
 			
-		createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionNames)
 			break
 		/*================ BUTTON 2 ================*/
 		case "1":
@@ -145,9 +168,19 @@ function switchMap(map, state) {
 			]
 			mapSectionNames = [
 				"Infraestructura Verde",
+				"Equipamientos Urbanos"
+			]
+			elementNames = [
+				"Infraestructura Verde",
 				"Equipamiento Urbano"
 			]
-			createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionNames)
+			createLayers(map,
+				fileNames,
+				markerStyles,
+				bufferStyles,
+				mapSectionNames,
+				elementNames
+			)
 			break
 		/*================ BUTTON 3 ================*/
 		case "2":
@@ -171,7 +204,19 @@ function switchMap(map, state) {
 				"Obstruccines",
 				"Señalamientos"
 			]
-			createLayers(map, fileNames, markerStyles, bufferStyles, mapSectionNames)
+			elementNames = [
+				"Banqueta",
+				"Obstrucción",
+				"Señamiento"
+			]
+			
+			createLayers(map,
+				fileNames,
+				markerStyles,
+				bufferStyles,
+				mapSectionNames,
+				elementNames
+			)
 			break
 		default:
 			break
@@ -189,7 +234,10 @@ drawMap(map)
 /*================ ADD THE POLIGON ================*/
 let poli = L.geoJSON(poligonoAndrade, {
 	style: poligonoAndradeStyle
+}).bindPopup(layer => {
+	return "<b>Polígono de la Andrade</b>"
 })
+
 let poliLayer = L.layerGroup([poli]).addTo(map)
 
 let layerControl = L.control.layers(null, {"Polígono": poliLayer}).addTo(map)
