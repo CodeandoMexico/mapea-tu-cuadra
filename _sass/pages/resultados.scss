@@ -12,21 +12,19 @@
 	border: 1px solid gray;
 	border-radius: 1rem;
 
-	cursor: pointer;
-
 	&__title {
 		font-size: 2rem;
 	}
 
 	&__icons {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 
 		width: 100%;
 		
 		& svg {
-			width: 2rem;
+			width: 3rem;
 			transition: 300ms all ease-in-out;
 			fill: $text-color;
 

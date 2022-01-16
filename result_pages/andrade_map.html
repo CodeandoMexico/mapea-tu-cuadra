@@ -21,7 +21,6 @@ title: Algunos resultados
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consequatur adipisci repellat dignissimos aliquid ullam nulla magnam voluptatem, quisquam quam dolor quod enim exercitationem nostrum consectetur dolorum hic doloremque ipsam?</p>
 
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. At alias nesciunt aut illum, amet debitis iste cumque temporibus sunt doloremque eligendi similique placeat laboriosam impedit labore vel, sint, dicta ut?
-			{% assign colors_text = "#F2789F,#064635,#000957,#FF7800" %}
 			{% assign colors = colors_text | split: "," %}
 			<div class="btn-container">
 				{% for result in site.data.results %}
@@ -29,7 +28,7 @@ title: Algunos resultados
 						{% for section in result.sections %}
 							<a href="#map" class="btn-map" id="{% increment index %}"
 								{% assign c_index = index | minus: 1 %}
-							style="background-color:{{ colors[c_index] }}">
+							style="background-color:#ff6161">
 								<strong>{{ section[0] | split: '_' | join: ' ' | capitalize }}</strong>
 							</a>
 						{% endfor %}
@@ -47,7 +46,7 @@ title: Algunos resultados
 </section>
 
 <!-- =================== POLIGONO ======================= -->
-<script defer src="{{ '/assets/data/andrade/Poligono_Andrade.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/data/andrade/poligono_andrade.js' | relative_url }}"></script>
 
 <!-- =================== CICLISTA ======================= -->
 <script src="{{ '/assets/data/andrade/infraestructura_ciclista/cicloestacionamientos.js' | relative_url }}"></script>
