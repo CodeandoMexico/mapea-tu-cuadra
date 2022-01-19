@@ -18,9 +18,35 @@ title: Algunos resultados
 			</div>
 		</div>
 		<div class="description__wrap">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consequatur adipisci repellat dignissimos aliquid ullam nulla magnam voluptatem, quisquam quam dolor quod enim exercitationem nostrum consectetur dolorum hic doloremque ipsam?</p>
+			<p>Aquí encontrarás los resultados de nuestro estudio de mapeo, está dividido en 3 secciones:
+				<ul>
+					<li><b>Infraestructura ciclista -</b> En esta sección se encontrarán reflejados 3 elementos concernientes al equipamiento ciclista, tales como:
+						<ul>
+							<li>Ciclo estacionamientos tanto del sector público como por parte de Mobike.</li>
+							<li>Calles compartidas, es decir, calles por donde existen señalamientos que indican que existe un carril específico para las bicicletas.</li>
+							<li>Señales de velocidad máxima.</li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li><b>Espacios publicos y equipamiento -</b> En esta sección se notan los espacios tales como:
+						<ul>
+							<li>Infraestructura verde, tales como parques, jardineras, fuentes, etc.</li>
+							<li>Equipamientos Urbanos tales como escuelas, hospitales, centros, botes de basura, etc.</li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li><b>Infraestructura peatonal -</b> Puntos que representan elementos que tienen que ver con los peatones: 
+						<ul>
+							<li>Los puntos de <i>Banquetas</i> son los puntos donde medimos el ancho de las banquetas (se planea que estos datos se migren a los frentes de manzana).</li>
+							<li>Las Obstruccines son puntos donde detectamos que existe una obstrucción en una banqueta, un punto se considera obstrucción cuando consideramos que una silla de ruedas no podría pasar correctamente.</li>
+							<li>Señalamientos que indican la orientación, el nombre de la calle o que hay un cruce peatonal.</li>
+						</ul>
+					</li>
+				</ul>
+			</p>
 
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. At alias nesciunt aut illum, amet debitis iste cumque temporibus sunt doloremque eligendi similique placeat laboriosam impedit labore vel, sint, dicta ut?
 			{% assign colors = colors_text | split: "," %}
 			<div class="btn-container">
 				{% for result in site.data.results %}
