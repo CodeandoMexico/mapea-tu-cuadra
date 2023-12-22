@@ -3,7 +3,7 @@ title: Mapea tu Cuadra
 author: Codeando México
 description: > # Meta description of Homepage
   Mapea tu Cuadra, es una iniciativa de URBE León en colaboración con Codeando México, para mapear la infraestructura de micromovilidad en las ciudades.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/mapea-tu-cuadra" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN
